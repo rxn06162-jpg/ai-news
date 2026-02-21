@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f0f1a">
+  <title>AI最新情報ダッシュボード</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .setup-msg {
+      text-align: center;
+      padding: 32px 20px;
+      max-width: 480px;
+    }
+    .setup-msg h1 {
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #a78bfa, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .setup-msg p {
+      color: #888;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .setup-msg .hint {
+      margin-top: 20px;
+      background: #1a1a2e;
+      border: 1px solid #2a2a4a;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 0.8rem;
+      color: #a78bfa;
+    }
+  </style>
+</head>
+<body>
+  <div class="setup-msg">
+    <h1>🤖 AI最新情報ダッシュボード</h1>
+    <p>セットアップ完了後、GitHub Actionsが自動でニュースを取得してこのページを更新します。</p>
+    <div class="hint">
+      GitHub Actions の「Run workflow」を押して手動実行してみてください。
+    </div>
+  </div>
+</body>
+</html>
