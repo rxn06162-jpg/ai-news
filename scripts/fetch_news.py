@@ -41,6 +41,12 @@ FEEDS = [
         "emoji": "🔬"
     },
     {
+        "name": "Anthropic News",
+        "url": "https://www.anthropic.com/rss.xml",
+        "category": "AIモデル・ツール",
+        "emoji": "🤖"
+    },
+    {
         "name": "Hugging Face Blog",
         "url": "https://huggingface.co/blog/feed.xml",
         "category": "AIモデル・ツール",
