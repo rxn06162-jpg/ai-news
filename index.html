@@ -8,50 +8,316 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
       background: #0f0f1a;
       color: #e0e0e0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .setup-msg {
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 18px 16px 14px;
       text-align: center;
-      padding: 32px 20px;
-      max-width: 480px;
+      border-bottom: 1px solid #2a2a4a;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
     }
-    .setup-msg h1 {
-      font-size: 1.5rem;
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
       background: linear-gradient(135deg, #a78bfa, #60a5fa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 16px;
     }
-    .setup-msg p {
-      color: #888;
-      font-size: 0.9rem;
-      line-height: 1.7;
+    .meta {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 6px;
+      font-size: 0.72rem;
+      color: #666;
     }
-    .setup-msg .hint {
-      margin-top: 20px;
+    .badge {
+      background: #2a2a4a;
+      color: #a78bfa;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    main {
+      padding: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .category-section {
+      margin-bottom: 32px;
+    }
+    .category-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #a78bfa;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card {
+      display: block;
       background: #1a1a2e;
       border: 1px solid #2a2a4a;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 14px;
-      font-size: 0.8rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .card:hover { border-color: #4a4a8a; background: #1e1e35; }
+    .card:active { transform: scale(0.99); }
+    .source-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      background: #2a2a4a;
       color: #a78bfa;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-bottom: 7px;
+      font-weight: 500;
+    }
+    .card h3 {
+      font-size: 0.9rem;
+      line-height: 1.45;
+      margin-bottom: 6px;
+      color: #e8e8e8;
+      font-weight: 500;
+    }
+    .summary {
+      font-size: 0.78rem;
+      color: #777;
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+    .read-more {
+      font-size: 0.72rem;
+      color: #60a5fa;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 0.72rem;
+      color: #444;
+      border-top: 1px solid #1a1a2e;
     }
   </style>
 </head>
 <body>
-  <div class="setup-msg">
+  <header>
     <h1>🤖 AI最新情報ダッシュボード</h1>
-    <p>セットアップ完了後、GitHub Actionsが自動でニュースを取得してこのページを更新します。</p>
-    <div class="hint">
-      GitHub Actions の「Run workflow」を押して手動実行してみてください。
+    <div class="meta">
+      <span>更新: 2026年02月21日 03:36 UTC</span>
+      <span class="badge">30件</span>
     </div>
-  </div>
+  </header>
+  <main>
+    
+        <section class="category-section">
+          <h2 class="category-title">📰 ニュース</h2>
+          <div class="cards">
+            <a href="https://techcrunch.com/2026/02/20/indias-sarvam-launches-indus-ai-chat-app-as-competition-heats-up/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">TechCrunch AI</span>
+              <h3>India’s Sarvam launches Indus AI chat app as competition heats up</h3>
+              <p class="summary">Sarvam&#x27;s Indus chat app is currently available in beta.…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://techcrunch.com/video/the-creator-economys-ad-revenue-problem-and-indias-ai-ambitions/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">TechCrunch AI</span>
+              <h3>The creator economy’s ad revenue problem and India’s AI ambitions</h3>
+              <p class="summary">The&amp;#160;creator&amp;#160;economy is evolving fast, and ad revenue alone&amp;#160;isn&amp;#8217;t&amp;#160;cutting it anymore.&amp;#160;YouTubers are launching product lines,&amp;#160;acquiring&amp;#160;startups, and building ac…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://techcrunch.com/podcast/why-creators-are-ditching-ad-revenue-for-chocolate-bars-and-fintech-acquisitions/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">TechCrunch AI</span>
+              <h3>Why creators are ditching ad revenue for chocolate bars and fintech acquisitions</h3>
+              <p class="summary">The creator economy is evolving fast, and ad revenue alone isn&amp;#8217;t cutting it anymore. YouTubers are launching product lines, acquiring startups, and building actual business empires. In fact, MrB…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://techcrunch.com/2026/02/20/anthropic-funded-group-backs-candidate-attacked-by-rival-ai-super-pac/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">TechCrunch AI</span>
+              <h3>Anthropic-funded group backs candidate attacked by rival AI super PAC</h3>
+              <p class="summary">Dueling pro-AI PACs have centered around backing or targeting one New York congressional bid: Alex Bores, whose RAISE Act requires AI developers to disclose safety protocols and report serious system …</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://techcrunch.com/2026/02/20/inscope-nabs-14-5m-to-solve-the-pain-of-financial-reporting/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">TechCrunch AI</span>
+              <h3>InScope nabs $14.5M to solve the pain of financial reporting</h3>
+              <p class="summary">The startup, founded by accountants who worked at Flexport, Miro, Hopin and Thrive Global, automates the difficulties of prepping financial statements.…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://www.technologyreview.com/2026/02/19/1133360/microsoft-has-a-new-plan-to-prove-whats-real-and-whats-ai-online/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">MIT Technology Review AI</span>
+              <h3>Microsoft has a new plan to prove what’s real and what’s AI online</h3>
+              <p class="summary">AI-enabled deception now permeates our online lives. There are the high-profile cases you may easily spot, like when White House officials recently shared a manipulated image of a protester in Minneso…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://www.technologyreview.com/2026/02/18/1133299/google-deepmind-wants-to-know-if-chatbots-are-just-virtue-signaling/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">MIT Technology Review AI</span>
+              <h3>Google DeepMind wants to know if chatbots are just virtue signaling</h3>
+              <p class="summary">Google DeepMind is calling for the moral behavior of large language models—such as what they do when called on to act as companions, therapists, medical advisors, and so on—to be scrutinized with the …</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://www.technologyreview.com/2026/02/18/1132579/robots-predict-future-book-review/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">MIT Technology Review AI</span>
+              <h3>The robots who predict the future</h3>
+              <p class="summary">To be human is, fundamentally, to be a forecaster. Occasionally a pretty good one. Trying to see the future, whether through the lens of past experience or the logic of cause and effect, has helped us…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://www.technologyreview.com/2026/02/12/1132386/ai-already-making-online-swindles-easier/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">MIT Technology Review AI</span>
+              <h3>AI is already making online crimes easier. It could get much worse.</h3>
+              <p class="summary">Anton Cherepanov is always on the lookout for something interesting. And in late August last year, he spotted just that. It was a file uploaded to VirusTotal, a site cybersecurity researchers like him…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://www.technologyreview.com/2026/02/12/1132811/whats-next-for-chinese-open-source-ai/" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">MIT Technology Review AI</span>
+              <h3>What’s next for Chinese open-source AI</h3>
+              <p class="summary">MIT Technology Review’s What’s Next series looks across industries, trends, and technologies to give you a first look at the future. You can read the rest of them&amp;#160;here. The past year has marked a…</p>
+              <span class="read-more">続きを読む →</span>
+            </a></div>
+        </section>
+        <section class="category-section">
+          <h2 class="category-title">🤗 AIモデル・ツール</h2>
+          <div class="cards">
+            <a href="https://huggingface.co/blog/ggml-joins-hf" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">Hugging Face Blog</span>
+              <h3>GGML and llama.cpp join HF to ensure the long-term progress of Local AI</h3>
+              
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://huggingface.co/blog/unsloth-jobs" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">Hugging Face Blog</span>
+              <h3>Train AI models with Unsloth and Hugging Face Jobs for FREE</h3>
+              
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://huggingface.co/blog/nvidia/nemotron-personas-japan-nttdata-ja" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">Hugging Face Blog</span>
+              <h3>「データ不足」の壁を越える：合成ペルソナが日本のAI開発を加速</h3>
+              
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://huggingface.co/blog/ibm-research/itbenchandmast" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">Hugging Face Blog</span>
+              <h3>IBM and UC Berkeley Diagnose Why Enterprise Agents Fail Using IT-Bench and MAST</h3>
+              
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://huggingface.co/blog/gradio-html-one-shot-apps" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">Hugging Face Blog</span>
+              <h3>One-Shot Any Web App with Gradio&#x27;s gr.HTML</h3>
+              
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://openai.com/index/first-proof-submissions" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">OpenAI News</span>
+              <h3>Our First Proof submissions</h3>
+              <p class="summary">We share our AI model’s proof attempts for the First Proof math challenge, testing research-grade reasoning on expert-level problems.…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://openai.com/index/advancing-independent-research-ai-alignment" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">OpenAI News</span>
+              <h3>Advancing independent research on AI alignment</h3>
+              <p class="summary">OpenAI commits $7.5M to The Alignment Project to fund independent AI alignment research, strengthening global efforts to address AGI safety and security risks.…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://openai.com/index/openai-for-india" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">OpenAI News</span>
+              <h3>Introducing OpenAI for India</h3>
+              <p class="summary">OpenAI for India expands AI access across the country—building local infrastructure, powering enterprises, and advancing workforce skills.…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://openai.com/index/new-result-theoretical-physics" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">OpenAI News</span>
+              <h3>GPT-5.2 derives a new result in theoretical physics</h3>
+              <p class="summary">A new preprint shows GPT-5.2 proposing a new formula for a gluon amplitude, later formally proved and verified by OpenAI and academic collaborators.…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://openai.com/index/introducing-lockdown-mode-and-elevated-risk-labels-in-chatgpt" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">OpenAI News</span>
+              <h3>Introducing Lockdown Mode and Elevated Risk labels in ChatGPT</h3>
+              <p class="summary">Introducing Lockdown Mode and Elevated Risk labels in ChatGPT to help organizations defend against prompt injection and AI-driven data exfiltration.…</p>
+              <span class="read-more">続きを読む →</span>
+            </a></div>
+        </section>
+        <section class="category-section">
+          <h2 class="category-title">🔬 論文・研究</h2>
+          <div class="cards">
+            <a href="https://arxiv.org/abs/2602.16714" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.AI（論文）</span>
+              <h3>AIdentifyAGE Ontology for Decision Support in Forensic Dental Age Assessment</h3>
+              <p class="summary">arXiv:2602.16714v1 Announce Type: new Abstract: Age assessment is crucial in forensic and judicial decision-making, particularly in cases involving undocumented individuals and unaccompanied minors, w…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16715" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.AI（論文）</span>
+              <h3>Retrieval Augmented (Knowledge Graph), and Large Language Model-Driven Design Structure Matrix (DSM) Generation of Cyber-Physical Systems</h3>
+              <p class="summary">arXiv:2602.16715v1 Announce Type: new Abstract: We explore the potential of Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and Graph-based RAG (GraphRAG) for generating Design Str…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16716" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.AI（論文）</span>
+              <h3>Contextuality from Single-State Representations: An Information-Theoretic Principle for Adaptive Intelligence</h3>
+              <p class="summary">arXiv:2602.16716v1 Announce Type: new Abstract: Adaptive systems often operate across multiple contexts while reusing a fixed internal state space due to constraints on memory, representation, or phys…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16727" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.AI（論文）</span>
+              <h3>Mobility-Aware Cache Framework for Scalable LLM-Based Human Mobility Simulation</h3>
+              <p class="summary">arXiv:2602.16727v1 Announce Type: new Abstract: Large-scale human mobility simulation is critical for applications such as urban planning, epidemiology, and transportation analysis. Recent works treat…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16763" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.AI（論文）</span>
+              <h3>When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation</h3>
+              <p class="summary">arXiv:2602.16763v1 Announce Type: new Abstract: Artificial Intelligence (AI) benchmarks play a central role in measuring progress in model development and guiding deployment decisions. However, many b…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16730" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.LG（機械学習）</span>
+              <h3>MMCAformer: Macro-Micro Cross-Attention Transformer for Traffic Speed Prediction with Microscopic Connected Vehicle Driving Behavior</h3>
+              <p class="summary">arXiv:2602.16730v1 Announce Type: new Abstract: Accurate speed prediction is crucial for proactive traffic management to enhance traffic efficiency and safety. Existing studies have primarily relied o…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16735" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.LG（機械学習）</span>
+              <h3>A Few-Shot LLM Framework for Extreme Day Classification in Electricity Markets</h3>
+              <p class="summary">arXiv:2602.16735v1 Announce Type: new Abstract: This paper proposes a few-shot classification framework based on Large Language Models (LLMs) to predict whether the next day will have spikes in real-t…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16739" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.LG（機械学習）</span>
+              <h3>Real-time Secondary Crash Likelihood Prediction Excluding Post Primary Crash Features</h3>
+              <p class="summary">arXiv:2602.16739v1 Announce Type: new Abstract: Secondary crash likelihood prediction is a critical component of an active traffic management system to mitigate congestion and adverse impacts caused b…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16740" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.LG（機械学習）</span>
+              <h3>Quantifying LLM Attention-Head Stability: Implications for Circuit Universality</h3>
+              <p class="summary">arXiv:2602.16740v1 Announce Type: new Abstract: In mechanistic interpretability, recent work scrutinizes transformer &quot;circuits&quot; - sparse, mono or multi layer sub computations, that may reflect human u…</p>
+              <span class="read-more">続きを読む →</span>
+            </a>
+            <a href="https://arxiv.org/abs/2602.16742" target="_blank" rel="noopener" class="card">
+              <span class="source-tag">arXiv CS.LG（機械学習）</span>
+              <h3>DeepVision-103K: A Visually Diverse, Broad-Coverage, and Verifiable Mathematical Dataset for Multimodal Reasoning</h3>
+              <p class="summary">arXiv:2602.16742v1 Announce Type: new Abstract: Reinforcement Learning with Verifiable Rewards (RLVR) has been shown effective in enhancing the visual reflection and reasoning capabilities of Large Mu…</p>
+              <span class="read-more">続きを読む →</span>
+            </a></div>
+        </section>
+  </main>
+  <footer>毎日自動更新 · GitHub Actions + GitHub Pages</footer>
 </body>
 </html>
